@@ -1,0 +1,52 @@
+[tool.poetry]
+name = "c_api_example"
+version = "0.1.0"
+description = ""
+authors = ["Nyakku Shigure <sigure.qaq@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/ShigureLab/c_api_example"
+repository = "https://github.com/ShigureLab/c_api_example"
+keywords = []
+build = "build.py"
+classifiers = [
+  "Operating System :: OS Independent",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2"
+black = "^22.12"
+isort = "^5.11.3"
+tomli = { version = "^2.0.1", python = "<3.11" }
+pyright = "^1.1.284"
+pytest-rerunfailures = "^10.3"
+
+[tool.poetry.scripts]
+c_api_example = "c_api_example.__main__:main"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+add_imports = ["from __future__ import annotations"]
+skip = ["setup.py", ".venv"]
+
+[tool.pyright]
+include = ["yutto", "tests"]
+pythonVersion = "3.9"
+typeCheckingMode = "strict"
+
+[build-system]
+requires = ["poetry-core>=1.1.0", "setuptools"]
+build-backend = "poetry.core.masonry.api"
