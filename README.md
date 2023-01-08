@@ -2,7 +2,7 @@
 
 > **Note**
 >
-> 本示例仅用于 Paddle Type Hints 引入阶段的可行性验证
+> 本示例仅用于 Paddle Type Hints 引入方案中的部分的可行性验证
 
 ## 安装与运行
 
