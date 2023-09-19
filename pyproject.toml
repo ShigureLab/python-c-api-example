@@ -8,7 +8,6 @@ readme = "README.md"
 homepage = "https://github.com/ShigureLab/c_api_example"
 repository = "https://github.com/ShigureLab/c_api_example"
 keywords = []
-build = "build.py"
 classifiers = [
   "Operating System :: OS Independent",
   "License :: OSI Approved :: MIT License",
@@ -19,6 +18,10 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: Implementation :: CPython",
 ]
+
+[tool.poetry.build]
+script = "build.py"
+generate-setup-file = true
 
 [tool.poetry.dependencies]
 python = "^3.9"
