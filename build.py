@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from functools import partial
 from typing import Any
 
 from setuptools.command.build_ext import build_ext
@@ -38,8 +37,9 @@ class BuildExt(build_ext):
 
         super().build_extensions()
 
-
-C11BuildExt = partial(BuildExt, std="c11")
+class C11BuildExt(BuildExt):
+    def __init__(self, *args: Any, **kwargs: Any):
+        super().__init__(*args, std="c11", **kwargs)
 
 
 def build(setup_kwargs: dict[str, Any]):
